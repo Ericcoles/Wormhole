@@ -3,26 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Background Image and Song</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Welcome to Space</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: url('space.jpg');
+        background-size: cover;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+      }
+      h1 {
+        font-size: 3em;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      }
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-right: -105px;
+      }
+      button {
+        padding: 15px 30px;
+        font-size: 1.5em;
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: none;
+        border-radius: 10px;
+        transition: background-color 0.3s;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        margin-top: 0px;
+      }
+      button:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+      #hoverImage {
+        width: 100px;
+        margin-left: 20px;
+        opacity: 0.8;
+        animation: moveUpDown 1s infinite alternate;
+      }
+
+      @keyframes moveUpDown {
+        0% {
+          transform: translateY(7);
+        }
+        100% {
+          transform: translateY(-7px);
+        }
+      }
+    </style>
   </head>
   <body>
-    <!-- Background music -->
-    <audio
-      id="background-music"
-      src="throughthewormhole.mp3"
-      preload="auto"
-      loop
-    ></audio>
-
-    <div class="wormhole-container">
-      <img src="Hole.jpeg" alt="Wormhole" id="wormhole" />
+    <div>
+      <h1>Welcome to the Best Wormhole!</h1>
+      <div class="button-container">
+        <button id="enterButton">Enter the Wormhole</button>
+        <img id="hoverImage" src="worms.jpeg" alt="UFO" />
+      </div>
     </div>
 
-    <div class="UFO">
-      <img src="UFO.jpeg" alt="UFO" id="second-image" />
-    </div>
-
-    <script src="script.js"></script>
+    <script>
+      document.getElementById('enterButton').addEventListener('click', () => {
+        window.location.href = 'music.html';
+      });
+    </script>
   </body>
 </html>

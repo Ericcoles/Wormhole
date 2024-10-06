@@ -10,5 +10,5 @@ window.addEventListener('DOMContentLoaded', () => {
   // Optional: Set a timeout to unmute after a certain period
   setTimeout(() => {
     audio.muted = false; // Unmute after 5 seconds (or adjust as needed)
-  }, 5000); // Adjust the duration as needed
+  }, 100); // Adjust the duration as needed
 });
