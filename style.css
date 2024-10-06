@@ -1,0 +1,70 @@
+/* Basic page styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-image: url('Hole.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wormhole-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+#wormhole {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Animation for the second image */
+#second-image {
+  position: absolute;
+  width: 100px;
+  animation: orbit 5s linear infinite, shrink 5s ease-in-out 1;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(300px) rotate(0deg); /* Increased translateX value */
+  }
+  100% {
+    transform: rotate(360deg) translateX(300px) rotate(-360deg); /* Increased translateX value */
+  }
+}
+
+@keyframes shrink {
+  0% {
+    width: 100px;
+    top: 100px;
+    left: 50px;
+  }
+  80% {
+    width: 50px;
+  }
+  100% {
+    width: 0px;
+    top: 200px;
+    left: 200px;
+    opacity: 0;
+  }
+}
